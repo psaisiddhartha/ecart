@@ -1,96 +1,80 @@
-# 🛒 ECart - Django E-Commerce Application
+# 🛒 eCart - Django E-Commerce Application
 
-ECart is a simple e-commerce web application built using **Django** and **Bootstrap**. The project demonstrates the fundamentals of building an online shopping platform with features such as product browsing, cart management, user authentication, profile management, and order tracking.
+eCart is a simple e-commerce web application built using **Django** and **Bootstrap**. The project demonstrates the fundamentals of building an online shopping platform with features such as product browsing, cart management, user authentication, profile management, and order tracking.
 
 
-# 📸 Application Screenshots
+## 📸 Application Screenshots
 
 > Add your screenshots inside `/Uploads/screenshots/` folder and update the image paths.
 
-## Home Page
+**Home Page**
 
-![Home](/uploads/screenshots/home.png)
+![Home]()
 
+**Product Details**
 
-## Product Details
+![Product Details]()
 
-![Product Details](/uploads/screenshots/product_details.png)
+**Shopping Cart**
 
+![Cart]()
 
-## Shopping Cart
+**Login**
 
-![Cart](/uploads/screenshots/cart.png)
+![Login]()
 
+**Signup**
 
-## Login
+![Signup]()
 
-![Login](/uploads/screenshots/login.png)
+**Verify OTP**
 
+![Verify OTP]()
 
-## Signup
+**Profile**
 
-![Signup](/uploads/screenshots/signup.png)
+![Profile]()
 
+**Orders**
 
-## Verify OTP
-
-![Verify OTP](/uploads/screenshots/verify_otp.png)
-
-
-## Profile
-
-![Profile](/uploads/screenshots/profile.png)
+![Orders]()
 
 
-## Orders
+## 🚀 Features Implemented
 
-![Orders](/uploads/screenshots/orders.png)
-
-
-# 🚀 Features Implemented
-
-## User Authentication
-
+**User authentication:**
 * User Signup
 * Login using Email
 * Session-based Authentication
 * Logout
 
-
-## Product Management
-
+**Product management:**
 * Display all products
 * Category-wise filtering
 * Product detail page
 * Product images
 * Product descriptions
 
-
-## Shopping Cart
-
+**Shopping Cart:**
 * Add products to cart
 * Remove products from cart
 * Quantity management
 * Total price calculation
 * Checkout
 
-
-## Orders
-
+**Orders:**
 * Place orders
 * View previous orders
 * Order status
 * Order history
 
-
-## Profile Management
-
+**Profile Management:**
 * View profile information
 * Edit profile information
 * Manage addresses (UI implemented)
 
 
-# 🏗️ Project Structure
+## 🏗️ Project Structure
 
 ```
 ecart
@@ -125,70 +109,42 @@ ecart
 └── venv
 ```
 
+## ⚙️ Django Project Setup
 
-# ⚙️ Django Project Setup
+**Step-1:** Create Virtual Environment
 
-## 1. Create Virtual Environment
+`python -m venv venv`
 
-```
-python -m venv venv
-```
+**Step-2:** Activate
 
-Activate:
+Windows: `venv\Scripts\activate` \
+Linux/macOS: `source venv/bin/activate`
 
-### Windows
+**Step-3:** Install Packages
 
-```
-venv\Scripts\activate
-```
-
-### Linux / macOS
-
-```
-source venv/bin/activate
-```
+`pip install -r requirements.txt`
 
 
-## 2. Install Packages
+**Step-4:** Apply Migrations
 
-```
-pip install django pillow
-```
-
-or
-
-```
-pip install -r requirements.txt
-```
+`python manage.py makemigrations` \
+`python manage.py migrate`
 
 
-## 3. Apply Migrations
+**Step-5:** Run Server
 
-```
-python manage.py makemigrations
+`python manage.py runserver`
 
-python manage.py migrate
-```
+**Step-6:** Open
 
-
-## 4. Run Server
-
-```
-python manage.py runserver
-```
-
-Open:
-
-```
-http://127.0.0.1:8000/
-```
+`http://127.0.0.1:8000/store`
 
 
-# 📦 Packages Used
+## 📦 Packages Used
 
-## Django
+### Django
 
-Purpose:
+**Purpose:**
 
 * MVC/MVT framework
 * URL Routing
@@ -197,30 +153,18 @@ Purpose:
 * Authentication
 * Session Management
 
-Installation:
 
-```
-pip install django
-```
+### Pillow
 
-
-## Pillow
-
-Purpose:
+**Purpose:**
 
 * ImageField support
 * Product image uploads
 
-Installation:
 
-```
-pip install pillow
-```
+### Bootstrap 5
 
-
-## Bootstrap 5
-
-Purpose:
+**Purpose:**
 
 * Responsive UI
 * Navbar
@@ -233,9 +177,9 @@ Purpose:
 Included using CDN.
 
 
-## Bootstrap Icons
+### Bootstrap Icons
 
-Purpose:
+**Purpose:**
 
 * Icons for cart
 * Profile
@@ -245,13 +189,13 @@ Purpose:
 Included using CDN.
 
 
-# 🗄️ Models
+## 🗄️ Models
 
-## Customer
+### Customer
 
 Stores customer information.
 
-Fields:
+**Fields:**
 
 * name
 * phone
@@ -259,26 +203,26 @@ Fields:
 * address
 
 
-## Category
+### Category
 
 Stores product categories.
 
-Fields:
+**Fields:**
 
 * name
 
-Examples:
+**Examples:**
 
 * Computer accessories
 * House accessories
 * Mobile accessories
 
 
-## Product
+### Product
 
 Stores product details.
 
-Fields:
+**Fields:**
 
 * name
 * price
@@ -287,11 +231,11 @@ Fields:
 * description
 
 
-## Order
+### Order
 
 Stores placed orders.
 
-Fields:
+**Fields:**
 
 * customer
 * product
@@ -303,150 +247,104 @@ Fields:
 * status
 
 
-# 🌐 URL Routing
+## 🌐 URL Routing
 
-Examples:
+### Examples:
 
-```
-/
-```
+|URL|Name|
+|---|----|
+|`/store`|Home Page|
+|`/store/signup`|Signup Page|
+|`/store/login`|Login Page|
+|`/store/verify_otp`|Verify OTP|
+|`/store/logout` |Logout|
+|`/store/cart`|Shopping Cart|
+|`/store/orders`|Orders Page|
+|`/store/profile`|User Profile|
+|`/store/product/<id>`| Product Details|
+|`/store/check-out`| Checkout|
 
-Home Page
+## 🧠 Views Implemented
 
-```
-/signup
-```
+### Index View
 
-Signup Page
-
-```
-/login
-```
-
-Login Page
-
-```
-/logout
-```
-
-Logout
-
-```
-/cart
-```
-
-Shopping Cart
-
-```
-/orders
-```
-
-Orders Page
-
-```
-/profile
-```
-
-User Profile
-
-```
-/product/<id>
-```
-
-Product Details
-
-```
-/check-out
-```
-
-Checkout
-
-
-# 🧠 Views Implemented
-
-## Index View
-
-Responsibilities:
+**Responsibilities:**
 
 * Fetch products
 * Filter by category
 * Render home page
 
 
-## Product Detail View
+### Product Detail View
 
-Responsibilities:
+**Responsibilities:**
 
 * Display single product
 * Add item to cart
 
 
-## Signup View
+### Signup View
 
-Responsibilities:
+**Responsibilities:**
 
 * Register customer with email
 
 
-## Login View
+### Login View
 
-Responsibilities:
+**Responsibilities:**
 
 * Authenticate user
 * Create session
 
 
-## Logout View
+### Logout View
 
-Responsibilities:
+**Responsibilities:**
 
 * Destroy session
 * Redirect to home
 
 
-## Cart View
+### Cart View
 
-Responsibilities:
+**Responsibilities:**
 
 * Show selected products
 * Remove products
 * Calculate totals
 
 
-## Checkout View
+### Checkout View
 
-Responsibilities:
+**Responsibilities:**
 
 * Create orders
 * Store shipping information
 * Clear cart
 
 
-## Orders View
+### Orders View
 
-Responsibilities:
+**Responsibilities:**
 
 * Fetch customer orders
 * Display order history
 
 
-## Profile View
+### Profile View
 
-Responsibilities:
+**Responsibilities:**
 
 * Show customer details
 * Update profile information
 
 
-# 🧮 Custom Template Filters
+## 🧮 Custom Template Filters
 
-Implemented inside:
+Implemented inside: `store/templatetags/`
 
-```
-store/templatetags/
-```
-
-Examples:
+**Examples:**
 
 * cart_quantity
 * price_total
@@ -457,10 +355,9 @@ Examples:
 These simplify calculations directly inside templates.
 
 
-# Email utlity management system
+## Email utlity management system
 
-The application includes a utility function for sending OTP (One-Time Password) emails to users during authentication or verification processes.
-
+The application includes a utility function for sending OTP (One-Time Password) emails to users during authentication or verification processes. \
 This functionality is implemented inside the ```utils.py``` file using Django’s built-in email system.
 
 ## Code implementation
@@ -481,18 +378,18 @@ def send_otp_email(email, otp):
 ```
 
 
-## How it Works
+### How it Works
 
-* The function send_otp_email(email, otp) is called when OTP verification is required.
-* Django’s send_mail() function is used to send emails.
+* The function `send_otp_email(email, otp)` is called when OTP verification is required.
+* Django’s `send_mail()` function is used to send emails.
 * The email contains:
-  * Subject: OTP Verification
-  * Message: The generated OTP and validity time (5 minutes)
-* from_email is configured using settings.EMAIL_HOST_USER
-* recipient_list sends the OTP to the user's registered email address
+  * `Subject: OTP Verification`
+  * `Message: The generated OTP and validity time (5 minutes)`
+* from_email is configured using `settings.EMAIL_HOST_USER`
+* `recipient_list` sends the OTP to the user's registered email address
 
 
-## Configuration
+### Configuration
 
 To use this feature, email settings must be configured in ```settings.py```:
 
@@ -504,33 +401,28 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
 EMAIL_HOST_USER = "Your email id"
-EMAIL_HOST_PASSWORD = "Your email hot password"
+EMAIL_HOST_PASSWORD = "Your email host password"
 ```
 
-> **Note:**
-> Currently, the ```send_otp_email(email, otp)``` function is commented out in both login.py and signup.py views. Uncomment these lines to enable OTP email sending functionality.
+**Note:**  \
+*Currently, the ```send_otp_email(email, otp)``` function is commented out in both login.py and signup.py views. Uncomment these lines to enable OTP email sending functionality.*
 
-# 💾 Session Management
+## 💾 Session Management
 
 The application uses Django Sessions to store:
 
 * Logged-in customer ID
 * Shopping cart items
 
-Example:
+**Example:**
 
-```
-request.session["customer"]
-```
-
-```
-request.session["cart"]
-```
+`request.session["customer"]` \
+`request.session["cart"]`
 
 
-# 🎨 Frontend
+## 🎨 Frontend
 
-Built using:
+**Built using:**
 
 * HTML
 * Bootstrap v5.3
@@ -539,13 +431,13 @@ Built using:
 * Django Template Language (DTL)
 
 
-# 🔮 Planned Improvements
+## 🔮 Planned Improvements
 
 * Product search with autocomplete
 * Razorpay/Stripe payment integration
 
 
-# 👨‍💻 Author
+## 👨‍💻 Author
 
 Developed as a learning project to understand:
 

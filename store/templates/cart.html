@@ -24,7 +24,7 @@
             </div>
             <div class="d-flex flex-column align-items-end justify-content-between" style="height: 75px;">
               <!-- Remove -->
-              <form action="/cart" method="POST" class="m-0">
+              <form action="/store/cart" method="POST" class="m-0">
                 {% csrf_token %}
                 <input type="hidden" name="product" value="{{ product.id }}">
                 <input type="hidden" name="delete" value="True">
@@ -36,7 +36,7 @@
               </form>
               <!-- Quantity Controls -->
               <div class="d-flex align-items-center">
-                <form action="/cart" method="POST" class="m-0 border rounded-1">
+                <form action="/store/cart" method="POST" class="m-0 border rounded-1">
                   {% csrf_token %}
                   <input type="hidden" name="product" value="{{ product.id }}">
                   <input type="hidden" name="remove" value="True">
@@ -45,7 +45,7 @@
                   </button>
                 </form>
                 <span class="text-center" style="width: 30px;">{{ product|cart_quantity:request.session.cart }}</span>
-                <form action="/cart" method="POST" class="m-0 border rounded-1">
+                <form action="/store/cart" method="POST" class="m-0 border rounded-1">
                   {% csrf_token %}
                   <input type="hidden" name="product" value="{{ product.id }}">
                   <button type="submit" class="btn btn-sm">
@@ -91,7 +91,7 @@
         {% endif %}
         <hr>
         <!-- Checkout Form -->
-        <form action="/checkout" method="POST">
+        <form action="/store/checkout" method="POST">
           {% csrf_token %}
 
           {% if request.session.customer %}
@@ -99,7 +99,7 @@
               Checkout
             </button>
           {% else %}
-            <a href="/login" class="btn btn-warning rounded-0 py-1 w-100">
+            <a href="/store/login" class="btn btn-warning rounded-1 py-1 mx-auto">
               Login to Checkout
             </a>
           {% endif %}

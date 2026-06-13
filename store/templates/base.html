@@ -16,7 +16,7 @@
     <!-- Nav Bar -->
     <nav class="navbar navbar-expand-lg bg-light shadow-sm sticky-top">
       <div class="container">
-        <a class="navbar-brand d-flex align-items-center fs-3" href="/">
+        <a class="navbar-brand d-flex align-items-center fs-3" href="/store">
           <span style="color: orange;">e</span>
           <span class="text-primary">Cart</span>
         </a>
@@ -25,7 +25,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <!-- Search -->
-          <form class="ms-auto mb-0 w-50" action="/search">
+          <form class="ms-auto mb-0 w-50" action="/store/search">
             <div class="input-group input-group-sm">
               <button class="btn btn-warning rounded-0" type="submit">
                 <i class="bi bi-search"></i>
@@ -45,19 +45,19 @@
               </a>
               <ul class="dropdown-menu dropdown-menu-end shadow border-0">
                 <li>
-                  <a class="dropdown-item" href="/profile">
+                  <a class="dropdown-item" href="/store/profile">
                     <i class="bi bi-person me-2"></i>
                     Profile
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="/orders">
+                  <a class="dropdown-item" href="/store/orders">
                     <i class="bi bi-bag-check me-2"></i>
                     Orders
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="/cart">
+                  <a class="dropdown-item" href="/store/cart">
                     <i class="bi bi-cart3 me-2"></i>
                     Cart
                     <span class="badge bg-primary rounded-pill">{{request.session.cart.keys|length}}</span>
@@ -65,7 +65,7 @@
                 </li>
                 <li><hr class="dropdown-divider"></li>
                 <li>
-                  <a class="dropdown-item text-danger" href="/logout">
+                  <a class="dropdown-item text-danger" href="/store/logout">
                     <i class="bi bi-box-arrow-right me-2"></i>
                     Logout
                   </a>
@@ -73,11 +73,11 @@
               </ul>
             </div>
             {% else %}
-            <a class="nav-link position-relative" href="/cart">
+            <a class="nav-link position-relative" href="/store/cart">
               Cart
               <span class="badge bg-primary rounded-pill">{{request.session.cart.keys|length}}</span>
             </a>
-            <a class="nav-link" href="/login">Login</a>
+            <a class="nav-link" href="/store/login">Login</a>
             {% endif %}
           </div>
         </div>

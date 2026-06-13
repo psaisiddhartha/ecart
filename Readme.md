@@ -507,6 +507,8 @@ EMAIL_HOST_USER = "Your email id"
 EMAIL_HOST_PASSWORD = "Your email hot password"
 ```
 
+> **Note:**
+> Currently, the ```send_otp_email(email, otp)``` function is commented out in both login.py and signup.py views. Uncomment these lines to enable OTP email sending functionality.
 
 # 💾 Session Management
 

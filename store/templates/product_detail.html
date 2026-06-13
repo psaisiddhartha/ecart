@@ -30,7 +30,7 @@
           {% endif %}
         </p>
         <!-- Buttons -->
-        <form action="/product/{{product.id}}/" method="POST" class="mt-4">
+        <form action="/store/product/{{product.id}}/" method="POST" class="mt-4">
           {% csrf_token %}
           <input hidden type="text" name="product" value="{{product.id}}">
           <!-- Add To Cart -->

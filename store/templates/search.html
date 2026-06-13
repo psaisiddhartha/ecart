@@ -24,6 +24,7 @@
   </div>
 </div>
 <!-- Products -->
+{% if data %}
 <div id="products" class="d-flex flex-wrap justify-content-center gap-4 px-4 pb-5">
   {% for product in data %}
   <a href="{% url 'product_detail' product.id %}" class="text-decoration-none text-body">
@@ -39,4 +40,11 @@
   </a>
   {% endfor %}
 </div>
+{% else %}
+<div class="text-center text-muted p-5">
+  <p class="mb-0">No products found.</p>
+  <p class="mb-0">Try searching with different keyword.</p>
+</div>
+{% endif %}
+
 {% endblock %}

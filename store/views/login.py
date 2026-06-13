@@ -58,10 +58,10 @@ class Login(View):
             request.session["otp_purpose"] = "login"
             request.session["otp_created_at"] = current_time
 
-            #Send email
-            send_otp_email(email, otp)
+            # Send email
+            # send_otp_email(email, otp)
         
         # Show message
-        messages.success( request, f"OTP sent to '{email}'")
+        messages.success( request, f"OTP displayed in terminal")
         
         return redirect("verify_otp")

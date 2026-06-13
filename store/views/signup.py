@@ -57,7 +57,7 @@ class Signup(View):
             print("=" * 40)
 
             # Send email
-            send_otp_email(email, otp)
+            # send_otp_email(email, otp)
 
             request.session["otp"] = otp
             request.session["otp_email"] = email
@@ -69,6 +69,6 @@ class Signup(View):
             }
 
         # Display mesage
-        messages.success(request, f"OTP sent to '{email}'")
+        messages.success(request, f"OTP displayed in terminal")
 
         return redirect("verify_otp")

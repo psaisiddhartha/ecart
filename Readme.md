@@ -88,30 +88,30 @@ ecart
 
 **Step-1:** Create Virtual Environment
 
-`python -m venv venv`
+* `python -m venv venv`
 
 **Step-2:** Activate
 
-Windows: `venv\Scripts\activate` \
-Linux/macOS: `source venv/bin/activate`
+* Windows: `venv\Scripts\activate` \
+* Linux/macOS: `source venv/bin/activate`
 
 **Step-3:** Install Packages
 
-`pip install -r requirements.txt`
+* `pip install -r requirements.txt`
 
 **Step-4:** Apply Migrations
 
-`python manage.py makemigrations` \
-`python manage.py migrate`
+* `python manage.py makemigrations` \
+* `python manage.py migrate`
 
 
 **Step-5:** Run Server
 
-`python manage.py runserver`
+* `python manage.py runserver`
 
 **Step-6:** Open
 
-`http://127.0.0.1:8000/store`
+* `http://127.0.0.1:8000/store`
 
 
 ## 📦 Packages Used

@@ -166,7 +166,7 @@ Included using CDN.
 ## 🗄️ Models
 
 |Model|Description|Fields|
-|-----|-----|-----|
+|:-----|:-----|:-----|
 |Customer|Stores customer information|name, phone, email address|
 |Category|Stores product categories|name|
 |Product|Stores product details|name, price, category, image, description|
@@ -192,7 +192,7 @@ Included using CDN.
 ## 🧠 Views Implemented
 
 |View|Responsibilities|
-|-----|-----|
+|:-----|:-----|
 |Index View|- Fetch products<br>- Filter by category<br>- Render home page|
 |Product Detail View|- Display single product<br>- Add item to cart|
 |Signup View|- Register customer with email|

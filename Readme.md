@@ -5,7 +5,6 @@ eCart is a simple e-commerce web application built using **Django** and **Bootst
 
 ## 📸 Application Screenshots
 
-> Add your screenshots inside `/Uploads/screenshots/` folder and update the image paths.
 
 **Home Page**
 
@@ -41,37 +40,13 @@ eCart is a simple e-commerce web application built using **Django** and **Bootst
 
 
 ## 🚀 Features Implemented
-
-**User authentication:**
-* User Signup
-* Login using Email
-* Session-based Authentication
-* Logout
-
-**Product management:**
-* Display all products
-* Category-wise filtering
-* Product detail page
-* Product images
-* Product descriptions
-
-**Shopping Cart:**
-* Add products to cart
-* Remove products from cart
-* Quantity management
-* Total price calculation
-* Checkout
-
-**Orders:**
-* Place orders
-* View previous orders
-* Order status
-* Order history
-
-**Profile Management:**
-* View profile information
-* Edit profile information
-* Manage addresses (UI implemented)
+|Feature|Description|
+|:-----|:-----|
+|User authentication|- User Signup<br>- Login using Email<br>- Session-based Authentication<br>- Logout|
+|Product management|- Display all products<br>- Category-wise filtering<br>- Product detail page<br>- Product images<br>- Product descriptions|
+|Shopping Cart|- Add products to cart<br>- Remove products from cart<br>- Quantity management<br>- Total price calculation<br>- Checkout|
+|Orders|- Place orders<br>- View previous orders<br>- Order status<br>- Order history
+|Profile Management|- View profile information<br>- Edit profile information<br>- Manage addresses (UI implemented)
 
 
 ## 🏗️ Project Structure
@@ -123,7 +98,6 @@ Linux/macOS: `source venv/bin/activate`
 **Step-3:** Install Packages
 
 `pip install -r requirements.txt`
-
 
 **Step-4:** Apply Migrations
 
@@ -191,68 +165,19 @@ Included using CDN.
 
 ## 🗄️ Models
 
-### Customer
-
-Stores customer information.
-
-**Fields:**
-
-* name
-* phone
-* email
-* address
-
-
-### Category
-
-Stores product categories.
-
-**Fields:**
-
-* name
-
-**Examples:**
-
-* Computer accessories
-* House accessories
-* Mobile accessories
-
-
-### Product
-
-Stores product details.
-
-**Fields:**
-
-* name
-* price
-* category
-* image
-* description
-
-
-### Order
-
-Stores placed orders.
-
-**Fields:**
-
-* customer
-* product
-* quantity
-* price
-* address
-* phone
-* date
-* status
-
+|Model|Description|Fields|
+|-----|-----|-----|
+|Customer|Stores customer information|name, phone, email address|
+|Category|Stores product categories|name|
+|Product|Stores product details|name, price, category, image, description|
+|Order|Stores placed orders|customer, product, quantity, price, address phone, date, status|
 
 ## 🌐 URL Routing
 
 ### Examples:
 
 |URL|Name|
-|---|----|
+|:---|:----|
 |`/store`|Home Page|
 |`/store/signup`|Signup Page|
 |`/store/login`|Login Page|
@@ -266,78 +191,17 @@ Stores placed orders.
 
 ## 🧠 Views Implemented
 
-### Index View
-
-**Responsibilities:**
-
-* Fetch products
-* Filter by category
-* Render home page
-
-
-### Product Detail View
-
-**Responsibilities:**
-
-* Display single product
-* Add item to cart
-
-
-### Signup View
-
-**Responsibilities:**
-
-* Register customer with email
-
-
-### Login View
-
-**Responsibilities:**
-
-* Authenticate user
-* Create session
-
-
-### Logout View
-
-**Responsibilities:**
-
-* Destroy session
-* Redirect to home
-
-
-### Cart View
-
-**Responsibilities:**
-
-* Show selected products
-* Remove products
-* Calculate totals
-
-
-### Checkout View
-
-**Responsibilities:**
-
-* Create orders
-* Store shipping information
-* Clear cart
-
-
-### Orders View
-
-**Responsibilities:**
-
-* Fetch customer orders
-* Display order history
-
-
-### Profile View
-
-**Responsibilities:**
-
-* Show customer details
-* Update profile information
+|View|Responsibilities|
+|-----|-----|
+|Index View|- Fetch products<br>- Filter by category<br>- Render home page|
+|Product Detail View|- Display single product<br>- Add item to cart|
+|Signup View|- Register customer with email|
+|Login View|- Authenticate user<br>- Create session|
+|Logout View|- Destroy session<br>- Redirect to home|
+|Cart View|- Show selected products<br>- Remove products<br>- Calculate totals|
+|Checkout View|- Create orders<br>- Store shipping information<br>- Clear cart|
+|Orders View|- Fetch customer orders<br>- Display order history|
+|Profile View|- Show customer details<br>- Update profile information|
 
 
 ## 🧮 Custom Template Filters
@@ -357,10 +221,9 @@ These simplify calculations directly inside templates.
 
 ## Email utlity management system
 
-The application includes a utility function for sending OTP (One-Time Password) emails to users during authentication or verification processes. \
-This functionality is implemented inside the ```utils.py``` file using Django’s built-in email system.
+The application includes a utility function for sending OTP (One-Time Password) emails to users during authentication or verification processes. This functionality is implemented inside the ```utils.py``` file using Django’s built-in email system.
 
-## Code implementation
+### Code implementation
 
 ```
 from django.core.mail import send_mail
@@ -405,7 +268,7 @@ EMAIL_HOST_PASSWORD = "Your email host password"
 ```
 
 **Note:**  \
-*Currently, the ```send_otp_email(email, otp)``` function is commented out in both login.py and signup.py views. Uncomment these lines to enable OTP email sending functionality.*
+*Currently, the* ```send_otp_email(email, otp)``` *function is commented out in both login.py and signup.py views. Uncomment these lines to enable OTP email sending functionality.*
 
 ## 💾 Session Management
 
@@ -420,9 +283,7 @@ The application uses Django Sessions to store:
 `request.session["cart"]`
 
 
-## 🎨 Frontend
-
-**Built using:**
+### 🎨 Frontend
 
 * HTML
 * Bootstrap v5.3

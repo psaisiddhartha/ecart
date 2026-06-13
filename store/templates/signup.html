@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container py-5 d-flex justify-content-center">
+  <div class="card shadow border-0 rounded-1" style="max-width: 700px; width: 100%;">
+    <div class="d-flex flex-wrap">
+      <!-- Left Panel -->
+      <div class="bg-light px-3 py-4 d-flex flex-column justify-content-between" style="width: 300px; min-height: 450px;">
+        <div>
+          <h2 class="mb-3">New here!</h1>
+          <p class="mb-0">Signup with your email to get started</p>
+        </div>
+        <div class="text-center">
+          <img src="../../uploads/logo/signin.jpg" class="img-fluid" alt="Signup Illustration">
+        </div>
+      </div>
+      <!-- Right Panel -->
+      <div class="flex-fill d-flex flex-column px-3 py-4">
+        <form action="/signup" method="POST">
+          {% csrf_token %}
+          <!-- Email -->
+          <div class="form-floating mb-3">
+            <input type="email" name="email" id="floatingInput" value="" class="form-control border-0 border-bottom rounded-1 shadow-none" placeholder="Enter email" required>
+            <label for="floatingInput">
+              Enter email
+              <span class="text-danger">*</span>
+            </label>
+          </div>
+          <!-- Submit -->
+          <button type="submit" class="btn btn-warning py-1 text-muted rounded-1 mx-auto">Send OTP</button>
+        </form>
+        <div class="mt-auto text-center">
+          <small class="text-muted">Already have an account?</small>
+          <a href="/login" class="text-decoration-none ms-1">Login</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

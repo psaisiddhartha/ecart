@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load cart %}
+{% load custom_filter %}
+
+<div class="container py-5"> 
+  <h2 class="mb-5 text-center">Your Cart</h2>
+  {% if products %}
+  <div class="d-flex gap-4 align-items-start justify-content-center fle-wrap">
+    <!-- Left Side -->
+    <div class="w-50" style="min-width: 500px;">
+      {% for product in products %}
+      <div class="card shadow-sm rounded-1 mb-3">
+        <div class="card-body">
+          <div class="d-flex align-items-center">
+            <div style="width: 100px;">
+              <img src="{{ product.image.url }}" class="img-fluid" style="height: 80px; object-fit: contain;">
+            </div>
+            <div class="flex-grow-1 ps-3">
+              <p class="mb-1 text-truncate">{{ product.name }}</p>
+              <p class="mb-0">{{ product|price_total:request.session.cart|currency }}</p>
+            </div>
+            <div class="d-flex flex-column align-items-end justify-content-between" style="height: 75px;">
+              <!-- Remove -->
+              <form action="/cart" method="POST" class="m-0">
+                {% csrf_token %}
+                <input type="hidden" name="product" value="{{ product.id }}">
+                <input type="hidden" name="delete" value="True">
+                <button
+                  type="submit"
+                  class="btn btn-link text-danger fs-5 p-0">
+                  <i class="bi bi-trash"></i>
+                </button>
+              </form>
+              <!-- Quantity Controls -->
+              <div class="d-flex align-items-center">
+                <form action="/cart" method="POST" class="m-0 border rounded-1">
+                  {% csrf_token %}
+                  <input type="hidden" name="product" value="{{ product.id }}">
+                  <input type="hidden" name="remove" value="True">
+                  <button type="submit" class="btn btn-sm">
+                    <i class="bi bi-dash"></i>
+                  </button>
+                </form>
+                <span class="text-center" style="width: 30px;">{{ product|cart_quantity:request.session.cart }}</span>
+                <form action="/cart" method="POST" class="m-0 border rounded-1">
+                  {% csrf_token %}
+                  <input type="hidden" name="product" value="{{ product.id }}">
+                  <button type="submit" class="btn btn-sm">
+                    <i class="bi bi-plus"></i>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Right Side -->
+    <div class="card shadow-sm rounded-1 text-dark" style="width: 320px;">
+      <div class="card-body">
+        <h5 class="mb-4">Order Summary</h5>
+        <!-- Total -->
+        <div class="d-flex justify-content-between mb-3">
+          <span>Subtotal</span>
+          <span>{{ products|total_cart_price:request.session.cart|currency }}</span>
+        </div>
+        <div class="d-flex justify-content-between mb-3">
+          <span>Shipping Fee</span>
+          <span>Free</span>
+        </div>
+        <hr>
+        <div class="d-flex justify-content-between fs-5 mb-4">
+          <span>Total</span>
+          <span>{{ products|total_cart_price:request.session.cart|currency }}</span>
+        </div>
+        <!-- DELIVERY ADDRESS -->
+        {% if request.session.customer %}
+        <div class="d-flex align-items-center gap-2">
+          <i class="bi bi-house-door-fill"></i>
+          <p class="text-muted text-truncate mb-0" style="font-size: 14px;">{{ customer.address }}</p>
+        </div>
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <i class="bi bi-person-lines-fill"></i>
+          <p class="text-muted text-truncate mb-0" style="font-size: 14px;">{{ customer.name }}, {{ customer.phone }}</p>
+        </div>
+        {% endif %}
+        <hr>
+        <!-- Checkout Form -->
+        <form action="/checkout" method="POST">
+          {% csrf_token %}
+
+          {% if request.session.customer %}
+            <button type="submit" class="btn btn-warning rounded-1 py-1 mx-auto">
+              Checkout
+            </button>
+          {% else %}
+            <a href="/login" class="btn btn-warning rounded-0 py-1 w-100">
+              Login to Checkout
+            </a>
+          {% endif %}
+        </form>
+      </div>
+    </div>
+  </div>
+
+  {% else %}
+
+  <div class="text-center border shadow-sm w-50 py-5 mx-auto">
+    <p class="text-muted mb-0">Your cart is empty.</p>
+  </div>
+  {% endif %}
+</div>
+
+{% endblock %}

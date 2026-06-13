@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load cart %}
+{% load custom_filter %}
+
+<div class="container py-5">
+  <div class="bg-white rounded-2 p-4 p-lg-5">
+    <div class="d-flex flex-column flex-lg-row align-items-center gap-5">
+      <!-- Product Image -->
+      <div class="flex-fill text-center">
+        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="img-fluid rounded-2" style="max-height: 500px; object-fit: contain;">
+      </div>
+      <!-- Product Details -->
+      <div class="flex-fill">
+        <!-- Product Name -->
+        <p class=" mb-0 fs-4">{{ product.name }}</p>
+        <!-- Category -->
+        <span class="badge text-muted bg-light border px-2 py-1 mb-3">{{ product.category.name }}</span>
+        <!-- Price -->
+        <p class="text-success fs-2 mb-2">{{ product.price|currency }}</p>
+        <!-- Description -->
+        <p class="fs-5 mb-3">Description</p>
+        <p class="text-secondary">
+          {% if product.description %}
+          {{ product.description }}
+          {% else %}
+          No description available for this product.
+          {% endif %}
+        </p>
+        <!-- Buttons -->
+        <form action="/product/{{product.id}}/" method="POST" class="mt-4">
+          {% csrf_token %}
+          <input hidden type="text" name="product" value="{{product.id}}">
+          <!-- Add To Cart -->
+          <button type="submit" class="btn btn-warning rounded-1 py-1">Add to cart</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

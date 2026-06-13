@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load cart %}
+{% load custom_filter %}
+
+<div class="container py-5"> 
+  <h2 class="mb-5 text-center">Your Orders</h2>
+  <div class="card rounded-1 shadow-sm w-50 mx-auto">
+    <div class="card-body">
+      {% for order in orders %}
+      <div class="d-flex align-items-center py-3">
+        <!-- Left Column -->
+        <div class="me-4">
+          <img src="{{ order.product.image.url }}" alt="{{ order.product.name }}" class="img-fluid" style="width: 120px; height: 120px; object-fit: contain;">
+        </div>
+        <!-- Right Column -->
+        <div class="flex-grow-1">
+          <h5 class="mb-2">{{ order.product.name }}</h5>
+          <p class="mb-1 text-muted">Order ID: #{{ order.id }}</p>
+          <p class="mb-1 text-muted">Ordered On: {{ order.date }}</p>
+          <p class="mb-1">Quantity: {{ order.quantity }}</p>
+          <p class="mb-1">Price: {{ order.price|currency }}</p>
+          {% if order.status %}
+            <span class="badge bg-success rounded-0">Completed</span>
+          {% else %}
+            <span class="badge bg-warning text-dark rounded-0">Pending</span>
+          {% endif %}
+        </div>
+      </div>
+      {% if not forloop.last %}
+        <hr class="my-0">
+      {% endif %}
+      {% empty %}
+      <div class="text-center py-4">
+        <p class="text-muted mb-0">No orders found.</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

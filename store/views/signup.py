@@ -23,7 +23,7 @@ class Signup(View):
         
         if Customer.objects.filter(email=email).exists():
             messages.error(request, 'Account already exists with this email address')
-            return redirect("signup.html")
+            return redirect("signup")
         
         current_time = timezone.now().timestamp()
 

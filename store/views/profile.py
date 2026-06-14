@@ -1,7 +1,6 @@
 from django.views import View
 from django.shortcuts import render, redirect
 from store.models.customer import Customer
-from django.contrib.auth.hashers import make_password
 from django.contrib import messages
 
 class Profile(View):

@@ -42,11 +42,11 @@ eCart is a simple e-commerce web application built using **Django** and **Bootst
 ## 🚀 Features Implemented
 |Feature|Description|
 |:-----|:-----|
-|User authentication|- User Signup<br>- Login using Email<br>- Session-based Authentication<br>- Logout|
-|Product management|- Display all products<br>- Category-wise filtering<br>- Product detail page<br>- Product images<br>- Product descriptions|
-|Shopping Cart|- Add products to cart<br>- Remove products from cart<br>- Quantity management<br>- Total price calculation<br>- Checkout|
-|Orders|- Place orders<br>- View previous orders<br>- Order status<br>- Order history
-|Profile Management|- View profile information<br>- Edit profile information<br>- Manage addresses (UI implemented)
+|User authentication|<ol><li>User Signup</li><li>Login using Email</li><li>Session-based Authentication (Verify OTP)<br></li><li>Logout</li></ol>|
+|Product management|<ol><li>Display all products</li><li>Category-wise filtering</li><li>Product detail page</li><li>Product images</li><li>Product descriptions</li></ol>|
+|Shopping Cart|<ol><li>Add products to cart</li><li>Remove products from cart</li><li>Quantity management</li><li>Total price calculation</li><li>Checkout</li></ol>|
+|Orders|<ol><li>Place orders</li><li>View previous orders</li><li>Order status</li><li>Order history</li></ol>|
+|Profile Management|<ol><li>View profile information</li><li>Edit profile information</li><li>Manage addresses (UI implemented)</li></ol>|
 
 
 ## 🏗️ Project Structure
@@ -92,7 +92,7 @@ ecart
 
 **Step-2:** Activate
 
-* Windows: `venv\Scripts\activate` \
+* Windows: `venv\Scripts\activate`
 * Linux/macOS: `source venv/bin/activate`
 
 **Step-3:** Install Packages
@@ -101,7 +101,7 @@ ecart
 
 **Step-4:** Apply Migrations
 
-* `python manage.py makemigrations` \
+* `python manage.py makemigrations`
 * `python manage.py migrate`
 
 
@@ -111,57 +111,29 @@ ecart
 
 **Step-6:** Open
 
-* `http://127.0.0.1:8000/store`
+* `http://127.0.0.1:8000/`
 
 
 ## 📦 Packages Used
 
-### Django
+The project uses the following Python packages:
 
-**Purpose:**
+|Package|Purpose|
+|-----|-----|
+|Django==6.6|Main web framework used to build the e-commerce application, including models, views, templates, URL routing, authentication, sessions, and ORM.|
+|Pillow==12.2.0|Provides image processing support required for Django ImageField and product image uploads.|
 
-* MVC/MVT framework
-* URL Routing
-* ORM
-* Template Engine
-* Authentication
-* Session Management
+## 🧩 Modules used
 
-
-### Pillow
-
-**Purpose:**
-
-* ImageField support
-* Product image uploads
-
-
-### Bootstrap 5
-
-**Purpose:**
-
-* Responsive UI
-* Navbar
-* Forms
-* Cards
-* Tables
-* Buttons
-* Modals
-
-Included using CDN.
-
-
-### Bootstrap Icons
-
-**Purpose:**
-
-* Icons for cart
-* Profile
-* Social media
-* Navigation
-
-Included using CDN.
-
+|Module|Purpose|
+|-----|-----|
+|`django.db.models`|Provides Django's ORM (Object Relational Mapping) for defining database models and fields.|
+|`django.utils.timezone`|Handles timezone-aware date and time operations. It is recommended over Python's `datetime.now()` when `USE_TZ=True`.|
+|`django.contrib.messages`|Django's messaging framework used to display one-time success, error, warning, or info messages after a request.|
+|`django.shortcuts.render`|Renders an HTML template with context data and returns an HTTP response.|
+|`django.shortcuts.redirect`|Redirects the user to another URL or named route.|
+|`store.middlewares.auth.auth_middleware`|Custom middleware created in this project to protect routes by ensuring only authenticated users can access them.|
+|`django.shortcuts.get_object_or_404`|Retrieves an object from the database or automatically returns a 404 error if it doesn't exist.|
 
 ## 🗄️ Models
 
@@ -173,8 +145,6 @@ Included using CDN.
 |Order|Stores placed orders|customer, product, quantity, price, address phone, date, status|
 
 ## 🌐 URL Routing
-
-### Examples:
 
 |URL|Name|
 |:---|:----|
@@ -193,15 +163,15 @@ Included using CDN.
 
 |View|Responsibilities|
 |:-----|:-----|
-|Index View|- Fetch products<br>- Filter by category<br>- Render home page|
-|Product Detail View|- Display single product<br>- Add item to cart|
-|Signup View|- Register customer with email|
-|Login View|- Authenticate user<br>- Create session|
-|Logout View|- Destroy session<br>- Redirect to home|
-|Cart View|- Show selected products<br>- Remove products<br>- Calculate totals|
-|Checkout View|- Create orders<br>- Store shipping information<br>- Clear cart|
-|Orders View|- Fetch customer orders<br>- Display order history|
-|Profile View|- Show customer details<br>- Update profile information|
+|Index View|<ul><li>Fetch products</li><li>Filter by category</li><li>Render home page</li><ul>|
+|Product Detail View|<ul><li>Display single product</li><li>Add item to cart</li></ul>|
+|Signup View|<ul><li>Register customer with email</li></ul>|
+|Login View|<ul><li>Authenticate user</li><li>Create session</li></ul>|
+|Logout View|<ul><li>Destroy session</li><li>Redirect to home</li></ul>|
+|Cart View|<ul><li>Show selected products</li><li>Remove products</li><li>Calculate totals</li></ul>|
+|Checkout View|<ul><li>Create orders</li><li>Store shipping information</li><li>Clear cart</li></ul>|
+|Orders View|<ul><li>Fetch customer orders</li><li>Display order history</li></ul>|
+|Profile View|<ul><li>Show customer details</li><li>Update profile information</li></ul>|
 
 
 ## 🧮 Custom Template Filters
@@ -268,7 +238,7 @@ EMAIL_HOST_PASSWORD = "Your email host password"
 ```
 
 **Note:**  \
-*Currently, the* ```send_otp_email(email, otp)``` *function is commented out in both login.py and signup.py views. Uncomment these lines to enable OTP email sending functionality.*
+Currently, the* ```send_otp_email(email, otp)``` *function is commented out in both login.py and signup.py views. Uncomment these lines to enable OTP email sending functionality, also change the alet message text.
 
 ## 💾 Session Management
 

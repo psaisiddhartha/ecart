@@ -2,8 +2,8 @@
 
 eCart is a simple e-commerce web application built using **Django** and **Bootstrap**. The project demonstrates the fundamentals of building an online shopping platform with features such as product browsing, cart management, user authentication, profile management, and order tracking.
 
-**Frontend:** HTML, Bootstrap v5.3, Bootstrap icons, Django Template Language (DTL)
-**Backend:** Django (Python Web Framework)
+**Frontend:** HTML, Bootstrap v5.3, Bootstrap icons, Django Template Language (DTL) \
+**Backend:** Django (Python Web Framework) \
 **Database:** SQLite3 (default Django database)
 
 

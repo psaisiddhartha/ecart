@@ -23,7 +23,7 @@ class VerifyOTP(View):
         else:
             return redirect("login")
 
-        return render(request, "verify_otp.html", {"email": email})
+        return render(request, "verify_otp.html", {"email": email, "purpose": purpose})
 
     def post(self, request):
 
@@ -48,6 +48,8 @@ class VerifyOTP(View):
             request.session.pop("otp_created_at", None)
 
             messages.error(request, "OTP has expired. Please request a new OTP.")
+
+            return redirect("login")
 
         # -----------------------
         # SIGNUP FLOW

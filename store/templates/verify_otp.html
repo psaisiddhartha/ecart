@@ -19,7 +19,11 @@
       <div class="flex-fill px-3 py-4">
         <div class="d-flex align-items-center justify-content-center gap-2 mb-4">
             <span>{{ email }}</span>
-            <a href="/store/login/" class="text-decoration-none" style="font-size: 14px;">Change</a>
+            {% if purpose=='login' %}
+            <a href="{% url 'login' %}" class="text-decoration-none" style="font-size: 14px;">Change</a>
+            {% elif purpose=='signup' %}
+            <a href="{% url 'signup' %}" class="text-decoration-none" style="font-size: 14px;">Change</a>
+            {% endif %}
         </div>
         <form method="POST">
           {% csrf_token %}

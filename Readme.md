@@ -8,35 +8,35 @@ eCart is a simple e-commerce web application built using **Django** and **Bootst
 
 **Home Page**
 
-![Home]()
+![Home](uploads/screenshots/home.png)
 
 **Product Details**
 
-![Product Details]()
+![Product Details](uploads/screenshots/product_details.png)
 
 **Shopping Cart**
 
-![Cart]()
+![Cart](uploads/screenshots/cart.png)
 
 **Login**
 
-![Login]()
+![Login](uploads/screenshots/login.png)
 
 **Signup**
 
-![Signup]()
+![Signup](uploads/screenshots/signup.png)
 
 **Verify OTP**
 
-![Verify OTP]()
+![Verify OTP](uploads/screenshots/verify_otp.png)
 
 **Profile**
 
-![Profile]()
+![Profile](uploads/screenshots/profile.png)
 
 **Orders**
 
-![Orders]()
+![Orders](uploads/screenshots/orders.png)
 
 
 ## 🚀 Features Implemented
@@ -120,8 +120,8 @@ The project uses the following Python packages:
 
 |Package|Purpose|
 |-----|-----|
-|Django==6.6|Main web framework used to build the e-commerce application, including models, views, templates, URL routing, authentication, sessions, and ORM.|
-|Pillow==12.2.0|Provides image processing support required for Django ImageField and product image uploads.|
+|`Django==6.6`|Main web framework used to build the e-commerce application, including models, views, templates, URL routing, authentication, sessions, and ORM.|
+|`Pillow==12.2.0`|Provides image processing support required for Django ImageField and product image uploads.|
 
 ## 🧩 Modules used
 
@@ -148,16 +148,16 @@ The project uses the following Python packages:
 
 |URL|Name|
 |:---|:----|
-|`/store`|Home Page|
-|`/store/signup`|Signup Page|
-|`/store/login`|Login Page|
-|`/store/verify_otp`|Verify OTP|
-|`/store/logout` |Logout|
-|`/store/cart`|Shopping Cart|
-|`/store/orders`|Orders Page|
-|`/store/profile`|User Profile|
-|`/store/product/<id>`| Product Details|
-|`/store/check-out`| Checkout|
+|`/`|Home Page|
+|`/signup`|Signup Page|
+|`/login`|Login Page|
+|`/verify_otp`|Verify OTP|
+|`/logout` |Logout|
+|`/cart`|Shopping Cart|
+|`/orders`|Orders Page|
+|`/profile`|User Profile|
+|`/product/<id>`| Product Details|
+|`/check-out`| Checkout|
 
 ## 🧠 Views Implemented
 
@@ -238,7 +238,7 @@ EMAIL_HOST_PASSWORD = "Your email host password"
 ```
 
 **Note:**  \
-Currently, the* ```send_otp_email(email, otp)``` *function is commented out in both login.py and signup.py views. Uncomment these lines to enable OTP email sending functionality, also change the alet message text.
+Currently, the ```send_otp_email(email, otp)``` function is commented out in both login.py and signup.py views. Uncomment these lines to enable OTP email sending functionality, also change the alet message text.
 
 ## 💾 Session Management
 

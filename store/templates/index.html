@@ -16,10 +16,10 @@
       {% endif %}
     </button>
     <ul class="dropdown-menu rounded-0">
-      <li><a class="dropdown-item" style="font-size: 14px;" href="/">All Products</a></li>
+      <li><a class="dropdown-item" style="font-size: 14px;" href="{% url 'homepage' %}">All Products</a></li>
       <li><hr class="dropdown-divider"></li>
       {% for category in categories %}
-      <li><a class="dropdown-item" style="font-size: 14px;" href="/?category={{category.id}}">{{ category.name }}</a></li>
+      <li><a class="dropdown-item" style="font-size: 14px;" href="{% url 'homepage' %}?category={{ category.id }}">{{ category.name }}</a></li>
       {% endfor %}
     </ul>
   </div>

@@ -9,11 +9,11 @@
   <div class="bg-white rounded-2 p-4 p-lg-5">
     <div class="d-flex flex-column flex-lg-row align-items-center gap-5">
       <!-- Product Image -->
-      <div class="flex-fill text-center">
+      <div class="flex-shrink-0 text-center">
         <img src="{{ product.image.url }}" alt="{{ product.name }}" class="img-fluid rounded-2" style="max-height: 500px; object-fit: contain;">
       </div>
       <!-- Product Details -->
-      <div class="flex-fill">
+      <div class="ps-lg-4 w-100">
         <!-- Product Name -->
         <p class=" mb-0 fs-4">{{ product.name }}</p>
         <!-- Category -->
@@ -30,7 +30,7 @@
           {% endif %}
         </p>
         <!-- Buttons -->
-        <form action="/store/product/{{product.id}}/" method="POST" class="mt-4">
+        <form action="{% url 'product_detail' product.id %}" method="POST" class="mt-4">
           {% csrf_token %}
           <input hidden type="text" name="product" value="{{product.id}}">
           <!-- Add To Cart -->

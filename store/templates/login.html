@@ -17,7 +17,7 @@
       </div>
       <!-- Right Panel -->
       <div class="flex-fill d-flex flex-column px-3 py-4">
-        <form action="/store/login/" method="POST">
+        <form action="{%url 'login' %}" method="POST">
           {% csrf_token %}
           <div class=" form-floating mb-3">
             <input type="email" name="email" value="" id="floatingInput" class="form-control border-0 border-bottom rounded-1 shadow-none" placeholder="name@example.com" required>
@@ -30,7 +30,7 @@
         </form>
         <div class="mt-auto text-center">
           <small class="text-muted">New to <b>eCart?</b></small>
-          <a href="/store/signup/" class="text-decoration-none ms-1">Create an account</a>
+          <a href="{% url 'signup' %}" class="text-decoration-none ms-1">Create an account</a>
         </div>
       </div>
     </div>

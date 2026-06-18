@@ -19,7 +19,7 @@ class CheckOut(View):
         if (
             not customer.name or
             not customer.phone or
-            not cutomer.address
+            not customer.address
         ):
             messages.warning(request, "Your Name, Phone Number, Address are required for checkout")
             return redirect('cart')

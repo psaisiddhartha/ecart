@@ -10,7 +10,7 @@
   <div class="card rounded-1 shadow-sm w-50 mx-auto">
     <div class="card-body">
       {% for order in orders %}
-      <div class="d-flex align-items-center py-3">
+      <div class="d-flex align-items-center">
         <!-- Left Column -->
         <div class="me-4">
           <img src="{{ order.product.image.url }}" alt="{{ order.product.name }}" class="img-fluid" style="width: 120px; height: 120px; object-fit: contain;">

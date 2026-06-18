@@ -91,7 +91,7 @@
         {% endif %}
         <hr>
         <!-- Checkout Form -->
-        <form action="{% url 'checkout' }" method="POST">
+        <form action="{% url 'checkout' %}" method="POST">
           {% csrf_token %}
 
           {% if request.session.customer %}
